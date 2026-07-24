@@ -55,5 +55,16 @@ rg -i 'quantization' papers/*.md              # search notes
 ## Citekeys
 
 `<firstauthorlastname><year><firstsignificanttitleword>`, lowercase, ASCII —
-e.g. `frantar2023gptq`. This is Better BibTeX's default format, so if a Zotero
-library gets added later the keys already line up and nothing needs renaming.
+e.g. `frantar2023gptq`.
+
+Better BibTeX's *default* formula is `auth.lower + shorttitle(3,3) + year`
+(→ `frantarGPTQAccuratePost2023`), which is not this. To make Zotero agree with
+the store, set the BBT citation key formula to:
+
+```
+auth.lower + year + shorttitle(1,1).lower
+```
+
+Zotero → Settings → Better BibTeX → Citation keys → Citation key formula.
+Do this before importing a library; changing it later does not regenerate
+existing keys (you'd have to select all items → right-click → Refresh).
