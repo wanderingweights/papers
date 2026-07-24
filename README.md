@@ -33,10 +33,22 @@ papers/
   <citekey>.md     one note per paper
   _template.md     the skeleton
   index.md         GENERATED — do not hand-edit
-  bin/reindex.py   regenerates index.md from frontmatter
+  bin/reindex.py     regenerates index.md from frontmatter
+  bin/arxiv.py       shared arXiv metadata fetching
   bin/arxiv-meta.py  arXiv id/URL -> frontmatter fields
-  pdfs/            optional, gitignored
+  bin/zotero-add.py  arXiv id/URL -> Zotero item + attached PDF
+  pdfs/              optional, gitignored
 ```
+
+## Zotero
+
+Zotero holds the PDF and the citation; this repo holds the thinking. They are
+joined by citekey and nothing else — no plugin, no sync daemon.
+
+`bin/zotero-add.py` pushes a paper INTO Zotero (metadata + PDF) at add time.
+It is one-directional and one-shot: nothing flows back, and these notes never
+appear in Zotero. Set BBT's key formula (below) so both sides agree on the
+citekey — that convention is the entire join.
 
 ## Usage
 
